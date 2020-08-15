@@ -145,5 +145,3 @@ function LoginPage(props) {
 };
 
 export default withRouter(LoginPage);
-
-

@@ -4,6 +4,8 @@ import { API_URL, API_KEY, IMAGE_BASE_URL, IMAGE_SIZE, POSTER_SIZE } from '../..
 import MainImage from './Sections/MainImage'
 import GridCard from '../../commons/GridCards'
 const { Title } = Typography;
+
+
 function LandingPage() {
     const buttonRef = useRef(null);
 
@@ -44,7 +46,6 @@ function LandingPage() {
         console.log('CurrentPage', CurrentPage)
         endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${CurrentPage + 1}`;
         fetchMovies(endpoint);
-
     }
 
     const handleScroll = () => {
@@ -58,7 +59,6 @@ function LandingPage() {
             // loadMoreItems()
             console.log('clicked')
             buttonRef.current.click();
-
         }
     }
 
