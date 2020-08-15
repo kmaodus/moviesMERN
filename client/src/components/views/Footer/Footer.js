@@ -10,7 +10,7 @@ function Footer() {
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize: '1rem'
         }}>
-            <p> Kristijan Maoduš - FOI 2020 </p>
+            <p> &copy; Kristijan Maoduš - {new Date().getFullYear()} </p>
         </div>
     )
 }
