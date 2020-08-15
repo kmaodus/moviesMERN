@@ -104,13 +104,13 @@ function MovieDetailPage(props) {
                 {/* Actors Grid*/}
 
                 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
-                    <Button onClick={toggleActorView}>Toggle Actor View </Button>
+                    <Button style={{ color: '#BD0A28', borderColor: '#BD0A28' }} onClick={toggleActorView}>Toggle Actor View </Button>
                 </div>
 
                 {ActorToggle &&
                     <Row gutter={[16, 16]}>
                         {
-                            !LoadingForCasts ? Casts.map((cast, index) => (
+                            !LoadingForCasts ? Casts.map((cast) => (
                                 cast.profile_path &&
                                 <GridCards actor image={cast.profile_path} characterName={cast.characterName} />
                             )) :
