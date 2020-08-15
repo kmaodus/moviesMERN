@@ -29,7 +29,7 @@ function Favorite(props) {
         }
 
         if (Favorited) {
-            //when we are already subscribed 
+            //when the movie is favorited 
             axios.post('/api/favorite/removeFromFavorite', variables)
                 .then(response => {
                     if (response.data.success) {
@@ -41,8 +41,7 @@ function Favorite(props) {
                 })
 
         } else {
-            // when we are not subscribed yet
-
+            // when the movie is not already favorited
             axios.post('/api/favorite/addToFavorite', variables)
                 .then(response => {
                     if (response.data.success) {
@@ -80,10 +79,9 @@ function Favorite(props) {
 
     return (
         <>
-            <Button onClick={onClickFavorite} > {!Favorited ? "Add to Favorite" : "Not Favorite"} {FavoriteNumber}</Button>
+            <Button onClick={onClickFavorite} > {!Favorited ? "Add to Favorites" : "Remove from favorites"} {FavoriteNumber}</Button>
         </>
     )
 }
 
 export default Favorite
-
