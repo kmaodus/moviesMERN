@@ -1,8 +1,6 @@
 //SERVER ROUTES
 export const USER_SERVER = '/api/users';
 
-
-
 export const API_URL = 'https://api.themoviedb.org/3/';
 export const API_KEY = 'b4a549abb798b19dbb7e63335d135053';
 

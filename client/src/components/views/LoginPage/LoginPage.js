@@ -132,7 +132,7 @@ function LoginPage(props) {
                     Log in
                 </Button>
                 </div>
-                Or <a href="/register">register now!</a>
+                Or <a href="/register">register now</a>
               </Form.Item>
             </form>
           </div>

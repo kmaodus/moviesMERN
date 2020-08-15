@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Typography, Row, Button } from 'antd';
+import { Typography, Row } from 'antd';
 import { API_URL, API_KEY, IMAGE_BASE_URL, IMAGE_SIZE, POSTER_SIZE } from '../../Config'
 import MainImage from './Sections/MainImage'
 import GridCard from '../../commons/GridCards'
@@ -62,6 +62,8 @@ function LandingPage() {
         }
     }
 
+
+
     return (
         <div style={{ width: '100%', margin: '0' }}>
             {MainMovieImage &&
@@ -73,9 +75,30 @@ function LandingPage() {
 
             }
 
+
+            {/* @todo Search bar */}
+
+            {/* <div class="container">
+                <div class="jumbotron">
+                    <h3 class="text-center">Search For Any Movie</h3>
+                    <form id="searchForm">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="searchText"
+                            placeholder="Search Movies..."
+                        />
+                    </form>
+                </div>
+            </div>
+
+            <div class="container">
+                <div id="movies" class="row"></div>
+            </div> */}
+
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
-                <Title level={2} > Movies by latest </Title>
+                <Title level={2} > Latest movies </Title>
                 <hr />
                 <Row gutter={[16, 16]}>
                     {Movies && Movies.map((movie, index) => (
