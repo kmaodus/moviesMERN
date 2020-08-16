@@ -50,8 +50,8 @@
 	padding: 6px;
 	margin-top: 8px;
 	display: none !important; /* use of important to overwrite ant-btn */
-	background: #BD0A28; /*foi color*/
-	border-color: #BD0A28;
+	background: #bd0a28; /*foi color*/
+	border-color: #bd0a28;
 }
 
 .menu_drawer .ant-drawer-body {
@@ -85,4 +85,11 @@
 	.menu__logo a {
 		padding: 10px 20px;
 	}
+}
+
+.foiRed {
+	color: #bd0a28;
+}
+.foiRed:hover {
+	color: #bd0a28;
 }
