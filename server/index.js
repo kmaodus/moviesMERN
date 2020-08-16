@@ -15,10 +15,10 @@ app.use(cookieParser());
 
 app.use('/api/users', require('./routes/users'));
 // app.use('/api/comment', require('./routes/comment'));
-// app.use('/api/like', require('./routes/like'));
+app.use('/api/like', require('./routes/like'));
 app.use('/api/favorite', require('./routes/favorite'));
 
-//use this to show the image you have in node js server to client (react js)
+// show the image you have in node js server to client
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
 app.use('/uploads', express.static('uploads'));
 

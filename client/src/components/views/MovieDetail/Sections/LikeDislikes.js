@@ -18,14 +18,13 @@ function LikeDislikes(props) {
         variable = { commentId: props.commentId, userId: props.userId }
     }
 
-    
 
 
     useEffect(() => {
 
         Axios.post('/api/like/getLikes', variable)
             .then(response => {
-                console.log('getLikes',response.data)
+                console.log('getLikes', response.data)
 
                 if (response.data.success) {
                     //How many likes does this video or comment have 
@@ -44,7 +43,7 @@ function LikeDislikes(props) {
 
         Axios.post('/api/like/getDislikes', variable)
             .then(response => {
-                console.log('getDislike',response.data)
+                console.log('getDislike', response.data)
                 if (response.data.success) {
                     //How many likes does this video or comment have 
                     setDislikes(response.data.dislikes.length)
@@ -64,7 +63,7 @@ function LikeDislikes(props) {
 
 
     const onLike = () => {
-       
+
         if (user.userData && !user.userData.isAuth) {
             return alert('Please Log in first');
         }
@@ -111,7 +110,7 @@ function LikeDislikes(props) {
     }
 
 
-    const onDisLike = () => {
+    const onDislike = () => {
 
         if (user.userData && !user.userData.isAuth) {
             return alert('Please Log in first');
@@ -119,7 +118,7 @@ function LikeDislikes(props) {
 
         if (DislikeAction !== null) {
 
-            Axios.post('/api/like/unDisLike', variable)
+            Axios.post('/api/like/unDislike', variable)
                 .then(response => {
                     if (response.data.success) {
 
@@ -133,7 +132,7 @@ function LikeDislikes(props) {
 
         } else {
 
-            Axios.post('/api/like/upDisLike', variable)
+            Axios.post('/api/like/upDislike', variable)
                 .then(response => {
                     if (response.data.success) {
 
@@ -141,7 +140,7 @@ function LikeDislikes(props) {
                         setDislikeAction('disliked')
 
                         //If dislike button is already clicked
-                        if(LikeAction !== null ) {
+                        if (LikeAction !== null) {
                             setLikeAction(null)
                             setLikes(Likes - 1)
                         }
@@ -150,11 +149,7 @@ function LikeDislikes(props) {
                         alert('Failed to increase dislike')
                     }
                 })
-
-
         }
-
-
     }
 
     return (
@@ -172,7 +167,7 @@ function LikeDislikes(props) {
                     <Icon
                         type="dislike"
                         theme={DislikeAction === 'disliked' ? 'filled' : 'outlined'}
-                        onClick={onDisLike}
+                        onClick={onDislike}
                     />
                 </Tooltip>
                 <span style={{ paddingLeft: '8px', cursor: 'auto' }}>{Dislikes}</span>
