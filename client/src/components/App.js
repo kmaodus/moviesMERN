@@ -11,6 +11,7 @@ import MovieDetail from "./views/MovieDetail/MovieDetail"
 import FavoritePage from "./views/FavoritePage/FavoritePage"
 
 
+
 function App() {
   return (
     <Suspense fallback={(<div>Loading...</div>)}>

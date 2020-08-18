@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
+import Search from "../../commons/Search"
 import { Typography, Row } from 'antd';
 import { API_URL, API_KEY, IMAGE_BASE_URL, IMAGE_SIZE, POSTER_SIZE } from '../../Config'
 import MainImage from './Sections/MainImage'
 import GridCard from '../../commons/GridCards'
+import axios from 'axios';
 const { Title } = Typography;
 
 
@@ -10,9 +12,12 @@ function LandingPage() {
     const buttonRef = useRef(null);
 
     const [Movies, setMovies] = useState([])
+    const [items, setItems] = useState([])
     const [MainMovieImage, setMainMovieImage] = useState(null)
     const [Loading, setLoading] = useState(true)
+    // const [isLoading, setIsLoading] = useState(true)
     const [CurrentPage, setCurrentPage] = useState(0)
+    const [query, setQuery] = useState('')
 
     useEffect(() => {
         const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
@@ -62,6 +67,20 @@ function LandingPage() {
         }
     }
 
+    useEffect(() => {
+        const fetchItems = async () => {
+            const result = await axios(
+                `${API_URL}search/movie?api_key=${API_KEY}
+                &language=en-US&query=${query}&page=1&include_adult=false`
+            )
+
+            setItems(result.data)
+            setLoading(false)
+        }
+
+        fetchItems()
+    }, [query])
+
 
 
     return (
@@ -74,6 +93,33 @@ function LandingPage() {
                 />
 
             }
+
+
+            {/* @todo Search bar */}
+
+            {/* <div class="container">
+                <div class="jumbotron">
+                    <h3 class="text-center">Search For Any Movie</h3>
+                    <form id="searchForm">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="searchText"
+                            placeholder="Search Movies..."
+                        />
+                    </form>
+                </div>
+            </div>
+
+            <div class="container">
+                <div id="movies" class="row"></div>
+            </div> */}
+
+            {/* --------------Testing search -------------*/}
+            <div style={{ width: '85%', margin: '1rem auto' }}>
+                <Search getQuery={(q) => setQuery(q)} />
+            </div>
+
 
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
