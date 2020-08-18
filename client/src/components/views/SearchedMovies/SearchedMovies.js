@@ -1,13 +1,26 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Typography, Row } from 'antd';
+import { Typography, Row, Input } from 'antd';
 import { API_URL, API_KEY, IMAGE_BASE_URL, IMAGE_SIZE, POSTER_SIZE } from '../../Config'
-import MainImage from './Sections/MainImage'
+import MainImage from '../../views/LandingPage/Sections/MainImage'
 import GridCard from '../../commons/GridCards'
 const { Title } = Typography;
+const { Search } = Input;
 
 
-function LandingPage() {
+function SearchedMovies() {
+    const [text, setText] = useState('');
+    const [query, setQuery] = useState('');
+
+    const onChange = (q) => {
+        setText(q)
+        getQuery(q)
+    }
+
+
     const buttonRef = useRef(null);
+    // const query = "avengers"
+    const url = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false
+    `;
 
     const [Movies, setMovies] = useState([])
     const [MainMovieImage, setMainMovieImage] = useState(null)
@@ -15,13 +28,11 @@ function LandingPage() {
     const [CurrentPage, setCurrentPage] = useState(0)
 
     useEffect(() => {
-        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+        const endpoint = url;
         fetchMovies(endpoint)
     }, [])
 
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-    }, [])
+
 
 
     const fetchMovies = (endpoint) => {
@@ -37,68 +48,34 @@ function LandingPage() {
                 setCurrentPage(result.page)
             }, setLoading(false))
             .catch(error => console.error('Error:', error)
-            )
+            ), [query]
     }
 
     const loadMoreItems = () => {
         let endpoint = '';
         setLoading(true)
         console.log('CurrentPage', CurrentPage)
-        endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${CurrentPage + 1}`;
+        // endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${CurrentPage + 1}`;
+        endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false
+        `;
         fetchMovies(endpoint);
     }
-
-    const handleScroll = () => {
-        const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-        const body = document.body;
-        const html = document.documentElement;
-        const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-        const windowBottom = windowHeight + window.pageYOffset;
-        if (windowBottom >= docHeight - 1) {
-
-            // loadMoreItems()
-            console.log('clicked')
-            buttonRef.current.click();
-        }
-    }
-
 
 
     return (
         <div style={{ width: '100%', margin: '0' }}>
-            {MainMovieImage &&
-                <MainImage
-                    image={`${IMAGE_BASE_URL}${IMAGE_SIZE}${MainMovieImage.backdrop_path}`}
-                    title={MainMovieImage.original_title}
-                    text={MainMovieImage.overview}
-                />
-
-            }
-
-
-            {/* @todo Search bar */}
-
-            {/* <div class="container">
-                <div class="jumbotron">
-                    <h3 class="text-center">Search For Any Movie</h3>
-                    <form id="searchForm">
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="searchText"
-                            placeholder="Search Movies..."
-                        />
-                    </form>
-                </div>
-            </div>
-
-            <div class="container">
-                <div id="movies" class="row"></div>
-            </div> */}
-
             <div style={{ width: '85%', margin: '1rem auto' }}>
-
-                <Title level={2} > Latest movies </Title>
+                <Title level={2} > Search result </Title>
+                <hr />
+                <Search
+                    getQuery={(q) => setQuery(q)}
+                    placeholder="Search for a movie.."
+                    enterButton="Search"
+                    size="large"
+                    value={text}
+                    onSearch={(e) => onChange(e.target.value)}
+                    onChange={(e) => onChange(e.target.value)}
+                />
                 <hr />
                 <Row gutter={[16, 16]}>
                     {Movies && Movies.map((movie, index) => (
@@ -127,4 +104,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage
+export default SearchedMovies

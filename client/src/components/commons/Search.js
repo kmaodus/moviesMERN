@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../../index.css';
 
 const Search = ({ getQuery }) => {
 
@@ -11,7 +12,7 @@ const Search = ({ getQuery }) => {
 
     return (
         <section className='search center'>
-            <form>
+            <form className='searchBar' >
                 <input
                     type="text"
                     className="form-control"

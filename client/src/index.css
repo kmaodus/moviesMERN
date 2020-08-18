@@ -38,3 +38,39 @@ input.error {
 	height: 5px;
 	margin-top: -12px;
 }
+
+.searchBar {
+	display: flex;
+	justify-content: center;
+}
+
+.btnLoad {
+	color: white;
+	border-color: red;
+	background-color: red;
+	padding: 2px;
+	display: inline-block;
+	color: #fff;
+	background-color: #bd0a28;
+	font-size: 1em;
+	text-align: center;
+	padding: 10px 15px;
+	border: 0;
+	margin: 10px 0;
+}
+
+input[type='text'] {
+	display: block;
+	padding: 10px;
+	font-size: 20px;
+	border: 1;
+	border-radius: 5px;
+	width: 100%;
+	margin: auto;
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
