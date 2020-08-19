@@ -6,7 +6,7 @@ function Footer() {
             backgroundColor: 'rgb(189, 10, 40)',
             color: 'black',
             fontWeight: 'bolder',
-            height: '80px', display: 'flex',
+            height: '72px', display: 'flex',
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize: '1rem'
         }}>
