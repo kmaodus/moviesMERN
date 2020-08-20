@@ -72,12 +72,11 @@ Project for Database theory course at Faculty of Organization and Informatics
 
 - [Contact](#contact)
 
-
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-![Landing Page](./assets/landingPage)
+Practicing MERN stack. TMDb API used for this project. --> https://www.themoviedb.org/
 
 ### Built With
 
@@ -148,6 +147,14 @@ npm start
 ## Usage
 
 You can register if you want to add movies in your favorites list, otherwise you can view latest popular movies and view detailed movie info by clicking on an image. If you are logged in you can also leave comments and likes on a movie.
+
+![Sign up](./assets/register.png)
+![Sign in](./assets/login.png)
+![Landing Page when the user is signed in](./assets/landingPage.png)
+![Landing Page scroll](./assets/landing2.png)
+![Movie info](./assets/movieInfo.png)
+![Actors view](./assets/actors.png)
+![List of favorites](./assets/favorites.png)
 
 <!-- ROADMAP -->
 
