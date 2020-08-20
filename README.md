@@ -72,7 +72,6 @@ Project for Database theory course at Faculty of Organization and Informatics
 
 - [Contact](#contact)
 
-- [Acknowledgements](#acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
 
