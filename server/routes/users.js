@@ -38,7 +38,7 @@ router.post("/login", (req, res) => {
         if (!user)
             return res.json({
                 loginSuccess: false,
-                message: "Auth failed, email not found"
+                message: "Authentication failed, email not found"
             });
 
         user.comparePassword(req.body.password, (err, isMatch) => {

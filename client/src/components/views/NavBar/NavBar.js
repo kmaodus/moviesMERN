@@ -18,7 +18,7 @@ function NavBar() {
   return (
     <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
       <div className="menu__logo">
-        <a href="/">Logo</a>
+        <a style={{ color: '#BD0A28', fontWeight: 'bolder' }} href="/">TBP Project</a>
       </div>
       <div className="menu__container">
         <div className="menu_left">
@@ -35,7 +35,7 @@ function NavBar() {
           <Icon type="align-right" />
         </Button>
         <Drawer
-          title="Basic Drawer"
+          title="FOI 2020"
           placement="right"
           className="menu_drawer"
           closable={false}

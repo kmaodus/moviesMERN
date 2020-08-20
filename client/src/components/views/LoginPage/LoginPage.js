@@ -71,12 +71,10 @@ function LoginPage(props) {
           values,
           touched,
           errors,
-          dirty,
           isSubmitting,
           handleChange,
           handleBlur,
-          handleSubmit,
-          handleReset,
+          handleSubmit
         } = props;
         return (
           <div className="app">
@@ -125,16 +123,16 @@ function LoginPage(props) {
               )}
 
               <Form.Item>
-                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
-                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
+                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe}  >Remember me</Checkbox>
+                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right', color: '' }}>
                   forgot password
                   </a>
                 <div>
-                  <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
+                  <Button htmlType="submit" className="login-form-button" style={{ minWidth: '100%', backgroundColor: '#BD0A28', color: 'white' }} disabled={isSubmitting} onSubmit={handleSubmit}>
                     Log in
                 </Button>
                 </div>
-                Or <a href="/register">register now!</a>
+                Or <a href="/register" style={{ color: '' }}>register now</a>
               </Form.Item>
             </form>
           </div>
@@ -145,5 +143,3 @@ function LoginPage(props) {
 };
 
 export default withRouter(LoginPage);
-
-
