@@ -150,9 +150,9 @@ You can register if you want to add movies in your favorites list, otherwise you
 
 ![Sign up](./assets/register.png)
 ![Sign in](./assets/login.png)
-![Landing Page when the user is signed in](./assets/landingPage.png)
-![Landing Page scroll](./assets/landing2.png)
-![Movie info](./assets/movieInfo.png)
+![Landing Page when the user is signed in](./assets/landingPage.jpg)
+![Landing Page scroll](./assets/landing2.jpg)
+![Movie info](./assets/movieInfo.jpg)
 ![Actors view](./assets/actors.png)
 ![List of favorites](./assets/favorites.png)
 
