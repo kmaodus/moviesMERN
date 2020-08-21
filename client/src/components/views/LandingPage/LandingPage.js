@@ -75,27 +75,6 @@ function LandingPage() {
 
             }
 
-
-            {/* @todo Search bar */}
-
-            {/* <div class="container">
-                <div class="jumbotron">
-                    <h3 class="text-center">Search For Any Movie</h3>
-                    <form id="searchForm">
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="searchText"
-                            placeholder="Search Movies..."
-                        />
-                    </form>
-                </div>
-            </div>
-
-            <div class="container">
-                <div id="movies" class="row"></div>
-            </div> */}
-
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
                 <Title level={2} > Latest movies </Title>

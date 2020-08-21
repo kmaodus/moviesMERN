@@ -27,10 +27,10 @@ function LikeDislikes(props) {
                 console.log('getLikes', response.data)
 
                 if (response.data.success) {
-                    //How many likes does this video or comment have 
+                    // n of comment likes 
                     setLikes(response.data.likes.length)
 
-                    //if I already click this like button or not 
+                    // if already clicked 
                     response.data.likes.map(like => {
                         if (like.userId === props.userId) {
                             setLikeAction('liked')
@@ -45,10 +45,10 @@ function LikeDislikes(props) {
             .then(response => {
                 console.log('getDislike', response.data)
                 if (response.data.success) {
-                    //How many likes does this video or comment have 
+                    // n of comment likes 
                     setDislikes(response.data.dislikes.length)
 
-                    //if I already click this like button or not 
+                    // if already clicked 
                     response.data.dislikes.map(dislike => {
                         if (dislike.userId === props.userId) {
                             setDislikeAction('disliked')

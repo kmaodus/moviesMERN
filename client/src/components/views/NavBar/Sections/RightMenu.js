@@ -42,4 +42,3 @@ function RightMenu(props) {
 }
 
 export default withRouter(RightMenu);
-

@@ -42,7 +42,7 @@ function ReplyComment(props) {
                 <p style={{ fontSize: '14px', margin: 0, color: 'gray' }}
                     onClick={handleChange} >
                     View {ChildCommentNumber} more comment(s)
-             </p>
+                </p>
             }
 
             {OpenReplyComments &&
