@@ -12,8 +12,8 @@ function LikeDislikes(props) {
     const [DislikeAction, setDislikeAction] = useState(null)
     let variable = {};
 
-    if (props.video) {
-        variable = { videoId: props.videoId, userId: props.userId }
+    if (props.movie) {
+        variable = { movieId: props.movieId, userId: props.userId }
     } else {
         variable = { commentId: props.commentId, userId: props.userId }
     }
