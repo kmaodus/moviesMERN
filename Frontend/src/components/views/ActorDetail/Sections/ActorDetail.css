@@ -1,0 +1,19 @@
+.ActorDetail{
+    margin: 30px 30px;
+}
+
+.ActorInformations{
+    display:flex;
+    flex-direction:row;
+}
+
+
+.ActorInformationsKeys{
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+#description{
+    display: flex;
+    flex-direction: column;
+}
